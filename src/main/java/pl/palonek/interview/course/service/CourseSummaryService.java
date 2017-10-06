@@ -42,16 +42,16 @@ public class CourseSummaryService {
 
     private ZonedDateTime getSessionsEndDate(List<CourseSession> sessions) {
         return sessions.stream()
-                    .map(CourseSession::getEndDate)
-                    .max(ZonedDateTime::compareTo)
-                    .get();
+                .map(CourseSession::getEndDate)
+                .max(ZonedDateTime::compareTo)
+                .get();
     }
 
     private ZonedDateTime getSessionsStartDate(List<CourseSession> sessions) {
         return sessions.stream()
-                    .map(CourseSession::getStartDate)
-                    .min(ZonedDateTime::compareTo)
-                    .get();
+                .map(CourseSession::getStartDate)
+                .min(ZonedDateTime::compareTo)
+                .get();
     }
 
     private double getAverage(List<CourseSession> sessions) {

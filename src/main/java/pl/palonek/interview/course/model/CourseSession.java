@@ -20,7 +20,7 @@ import java.time.ZonedDateTime;
 public class CourseSession {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String userId;
