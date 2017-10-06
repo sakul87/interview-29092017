@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'pl.palonek'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.7.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.7.RELEASE'
+	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.9.1'
+	compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-parameter-names', version: '2.9.1'
+	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.1'
+
+	runtime group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.7.RELEASE'
+}
